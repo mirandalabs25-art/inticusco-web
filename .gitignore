@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.*
+.vscode/
+client-original.html
+npm-debug.log*
+Thumbs.db
+.DS_Store
+
+# Archivos descargados accidentalmente de WhatsApp
+**/*WhatsApp Business.html
+**/*WhatsApp Business_files/
+**/*.descarga
+**/*.enc
+
+# Registros internos de renombrado
+**/_rename-log.txt

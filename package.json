@@ -1,0 +1,9 @@
+{
+  "name": "inticusco-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web de IntiCusco (HTML/CSS/JS) — catálogo generado a partir de la carpeta Gorras/.",
+  "scripts": {
+    "generar-productos": "node scripts/generar-productos.js"
+  }
+}

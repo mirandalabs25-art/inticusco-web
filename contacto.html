@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contacto — IntiCusco</title>
+<meta name="description" content="Visita IntiCusco en Calle Belén 452, Cusco, Perú. Abierto todos los días de 9:00 a. m. a 9:00 p. m. Escríbenos por WhatsApp." />
+<link rel="canonical" href="https://inticusco.lat/contacto.html" />
+<link rel="icon" href="assets/logo.jpg" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="IntiCusco" />
+<meta property="og:title" content="Contacto — IntiCusco" />
+<meta property="og:description" content="Calle Belén 452, Cusco. Todos los días de 9:00 a. m. a 9:00 p. m. WhatsApp +51 993 242 555." />
+<meta property="og:url" content="https://inticusco.lat/contacto.html" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+<style>
+  .page-hero { background: var(--color-dark); color: var(--color-white); padding: calc(var(--header-height) + 60px) 0 60px; text-align: center; }
+  .page-hero .eyebrow { color: #E7C9A9; }
+  .page-hero h1 { color: var(--color-white); font-size: clamp(1.9rem, 4.5vw, 2.8rem); }
+  .contact-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 30px; align-items: start; }
+  .contact-card { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 26px; margin-bottom: 18px; display: flex; gap: 16px; align-items: flex-start; }
+  .contact-card .icon { width: 42px; height: 42px; border-radius: 50%; background: var(--color-background); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .contact-card h3 { font-size: 1rem; margin-bottom: 4px; }
+  .contact-card p, .contact-card a { font-size: 0.9rem; color: var(--color-text-soft); display: block; }
+  .contact-card a:hover { color: var(--color-primary); }
+  .map-embed { width: 100%; height: 100%; min-height: 460px; border: 0; border-radius: var(--radius-md); box-shadow: var(--shadow-soft); }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } .map-embed { min-height: 320px; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+<!-- ===================== HEADER (compartido) ===================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand"><img src="assets/logo.jpg" alt="IntiCusco" /></a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <ul>
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicios.html?categoria=gorras">Gorras</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicios.html?coleccion=tendencias">Tendencias</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicios.html">Colecciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicios.html?categoria=sombreros">Sombreros y más</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicios.html?precio=0-30">Ofertas</a></li>
+        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html" aria-current="page">Visítanos</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <form class="header-search" action="servicios.html" method="get" role="search">
+        <input type="search" name="q" placeholder="Buscar gorras..." aria-label="Buscar gorras" />
+      </form>
+      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/51993242555?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20IntiCusco%20y%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener">WhatsApp</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil">
+  <div class="mobile-nav-header">
+    <span class="brand"><img src="assets/logo.jpg" alt="IntiCusco" /></span>
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Cerrar menú">&times;</button>
+  </div>
+  <div class="mobile-nav-body">
+    <form class="mobile-search" action="servicios.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Buscar gorras..." aria-label="Buscar gorras" />
+      <button type="submit" class="btn btn-primary btn-sm">Buscar</button>
+    </form>
+    <a class="top-link" href="index.html">Inicio</a>
+    <a class="top-link" href="servicios.html?categoria=gorras">Gorras</a>
+    <a class="top-link" href="servicios.html?coleccion=tendencias">Tendencias</a>
+    <a class="top-link" href="servicios.html">Colecciones</a>
+    <a class="top-link" href="servicios.html?categoria=sombreros">Sombreros y más</a>
+    <a class="top-link" href="servicios.html?precio=0-30">Ofertas</a>
+    <a class="top-link" href="nosotros.html">Nosotros</a>
+    <a class="top-link" href="contacto.html">Visítanos</a>
+  </div>
+  <div class="mobile-nav-footer">
+    <a class="btn btn-whatsapp btn-block" href="https://wa.me/51993242555?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20IntiCusco%20y%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Te esperamos</span>
+      <h1>Visítanos en Cusco</h1>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container contact-grid">
+      <div>
+        <div class="contact-card">
+          <div class="icon">📍</div>
+          <div>
+            <h3>Dirección</h3>
+            <p>Calle Belén 452, Cusco, Perú</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Calle+Bel%C3%A9n+452%2C+Cusco%2C+Peru" target="_blank" rel="noopener">Cómo llegar →</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="icon">🕒</div>
+          <div>
+            <h3>Horario</h3>
+            <p>Lunes a domingo</p>
+            <p>9:00 a. m. – 9:00 p. m.</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="icon">💬</div>
+          <div>
+            <h3>WhatsApp</h3>
+            <a href="https://wa.me/51993242555?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20IntiCusco%20y%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener">+51 993 242 555</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="icon">✉️</div>
+          <div>
+            <h3>Correo</h3>
+            <a href="mailto:luzmarina4411@gmail.com">luzmarina4411@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="icon">🏬</div>
+          <div>
+            <h3>Tienda física</h3>
+            <p>Compra presencial en Calle Belén 452, Cusco. También atendemos por WhatsApp.</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="icon">📘</div>
+          <div>
+            <h3>Facebook</h3>
+            <a href="https://www.facebook.com/gorrascusco1/?locale=es_LA" target="_blank" rel="noopener">facebook.com/gorrascusco1</a>
+          </div>
+        </div>
+      </div>
+
+      <iframe class="map-embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Calle%20Bel%C3%A9n%20452%2C%20Cusco%2C%20Peru&t=m&z=17&output=embed"
+        title="Ubicación de IntiCusco"></iframe>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>¿Tienes una consulta?</h2>
+          <p>Escríbenos por WhatsApp y te respondemos a la brevedad.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn" style="background:var(--color-white);color:var(--color-primary-dark);" href="https://wa.me/51993242555?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20IntiCusco%20y%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          <a class="btn btn-outline-light" href="servicios.html">Ver catálogo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="assets/logo.jpg" alt="IntiCusco" /></a>
+        <p>Gorras, sombreros, boinas, chullos y accesorios para toda la familia. Calle Belén 452, Cusco, Perú.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/51993242555" target="_blank" rel="noopener">WhatsApp: +51 993 242 555</a>
+        <a href="mailto:luzmarina4411@gmail.com">luzmarina4411@gmail.com</a>
+        <p>Calle Belén 452, Cusco, Perú</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Catálogo</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-col">
+        <h4>Horario</h4>
+        <p>Lunes a domingo<br />9:00 a. m. – 9:00 p. m.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/gorrascusco1/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook de IntiCusco">FB</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>IntiCusco © 2026. Todos los derechos reservados. Los modelos son diseños inspirados en distintos estilos, disponibles en diferentes variantes.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/51993242555?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20IntiCusco%20y%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">💬</a>
+
+<script src="assets/js/catalogo.config.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

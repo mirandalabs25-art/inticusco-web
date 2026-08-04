@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Catálogo — IntiCusco</title>
+<meta name="description" content="Catálogo completo de IntiCusco: gorras urbanas, camioneras, por estilo y temáticas, sombreros, boinas, chullos y accesorios. Filtra por público, color y precio." />
+<link rel="canonical" href="https://inticusco.lat/servicios.html" />
+<link rel="icon" href="assets/logo.jpg" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="IntiCusco" />
+<meta property="og:title" content="Catálogo — IntiCusco" />
+<meta property="og:description" content="Gorras, sombreros, boinas, chullos y accesorios para toda la familia, con descuento exclusivo desde la web." />
+<meta property="og:url" content="https://inticusco.lat/servicios.html" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+<style>
+  .catalog-hero {
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: calc(var(--header-height) + 54px) 0 46px;
+    text-align: center;
+  }
+  .catalog-hero .eyebrow { color: #E7C9A9; }
+  .catalog-hero h1 { color: var(--color-white); font-size: clamp(1.8rem, 4vw, 2.6rem); }
+  .browse-section { padding: 44px 0; }
+  .browse-section + .browse-section { padding-top: 0; }
+  .filters-panel { display: none; }
+  .filters-panel.open { display: grid; }
+  @media (max-width: 900px) {
+    .filters-toggle-btn { display: inline-flex; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+<!-- ===================== HEADER (compartido) ===================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand"><img src="assets/logo.jpg" alt="IntiCusco" /></a>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <ul>
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+
+        <li class="nav-item has-mega">
+          <a class="nav-link" href="servicios.html?categoria=gorras" aria-haspopup="true" aria-expanded="false">Gorras <span class="chevron"></span></a>
+          <div class="mega-panel">
+            <div class="mega-col">
+              <h4>Por tipo</h4>
+              <ul>
+                <li><a href="servicios.html?categoria=gorras">Todas las gorras</a></li>
+                <li><a href="servicios.html?tipo=gorras-urbanas-unisex">Urbanas</a></li>
+                <li><a href="servicios.html?tipo=camioneras-o-trucker">Camioneras o trucker</a></li>
+                <li><a href="servicios.html?tipo=gorras-vintage-o-prelavadas">Vintage y prelavadas</a></li>
+                <li><a href="servicios.html?tipo=gorras-prelavadas-clasicas">Prelavadas clásicas</a></li>
+                <li><a href="servicios.html?tipo=gorras-estilo-polo-en-tela-drill">Polo y Kepy Polo</a></li>
+                <li><a href="servicios.html?categoria=viseras">Viseras</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h4>Por estilo</h4>
+              <ul>
+                <li><a href="servicios.html?estilo=columbia">Columbia</a></li>
+                <li><a href="servicios.html?estilo=big-spin">Big Spin</a></li>
+                <li><a href="servicios.html?estilo=big-you">Big You</a></li>
+                <li><a href="servicios.html?estilo=calvin-klein">Calvin Klein</a></li>
+                <li><a href="servicios.html?estilo=lacoste">Lacoste</a></li>
+                <li><a href="servicios.html?estilo=hoja-latina">Hoja Latina</a></li>
+                <li><a href="servicios.html?estilo=gucci">Gucci</a></li>
+                <li><a href="servicios.html?estilo=guess">Guess</a></li>
+                <li><a href="servicios.html?estilo=versace">Versace</a></li>
+                <li><a href="servicios.html?estilo=michael">Michael</a></li>
+                <li><a href="servicios.html?estilo=hugo">Hugo</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h4>Temáticas</h4>
+              <ul>
+                <li><a href="servicios.html?tipo=gorras-de-equipos-de-futbol">Equipos de fútbol</a></li>
+                <li><a href="servicios.html?tipo=gorras-con-escudo-del-peru">Escudo del Perú</a></li>
+                <li><a href="servicios.html?publico=mujeres">Gorras para mujer</a></li>
+                <li><a href="servicios.html?publico=ninos">Gorras infantiles</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="servicios.html?coleccion=tendencias">Tendencias</a></li>
+
+        <li class="nav-item has-mega">
+          <a class="nav-link" href="servicios.html" aria-haspopup="true" aria-expanded="false">Colecciones <span class="chevron"></span></a>
+          <div class="mega-panel" style="grid-template-columns:1fr;min-width:260px;">
+            <div class="mega-col">
+              <h4>Colecciones</h4>
+              <ul>
+                <li><a href="servicios.html?publico=ninos">Para niños</a></li>
+                <li><a href="servicios.html?publico=mujeres">Selección para mujeres</a></li>
+                <li><a href="servicios.html?publico=adultos">Para adultos</a></li>
+                <li><a href="servicios.html?publico=unisex">Unisex</a></li>
+                <li><a href="servicios.html?coleccion=mas-vendidos">Más vendidos</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item has-mega">
+          <a class="nav-link" href="servicios.html?categoria=sombreros" aria-haspopup="true" aria-expanded="false">Sombreros y más <span class="chevron"></span></a>
+          <div class="mega-panel">
+            <div class="mega-col">
+              <h4>Sombreros</h4>
+              <ul>
+                <li><a href="servicios.html?categoria=sombreros">Todos los sombreros</a></li>
+                <li><a href="servicios.html?tipo=sombreros-impermeables-modelo-coreano">Sombreros coreanos</a></li>
+                <li><a href="servicios.html?tipo=sombreros-en-pano">Sombreros en paño</a></li>
+                <li><a href="servicios.html?tipo=sombreros-bordados-en-pano">Sombreros bordados</a></li>
+                <li><a href="servicios.html?tipo=sombreros-modelo-coreano-con-encaje">Sombreros con encaje</a></li>
+                <li><a href="servicios.html?tipo=sombreros-modelo-coreano-doble-cara">Sombreros doble cara</a></li>
+              </ul>
+            </div>
+            <div class="mega-col">
+              <h4>Abrigo y accesorios</h4>
+              <ul>
+                <li><a href="servicios.html?categoria=boinas">Boinas</a></li>
+                <li><a href="servicios.html?categoria=chullos">Chullos</a></li>
+                <li><a href="servicios.html?categoria=balaclavas-o-pasamontanas">Pasamontañas</a></li>
+                <li><a href="servicios.html?categoria=bandanas">Bandanas</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="servicios.html?precio=0-30">Ofertas</a></li>
+        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Visítanos</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <form class="header-search" action="servicios.html" method="get" role="search">
+        <input type="search" name="q" placeholder="Buscar gorras..." aria-label="Buscar gorras" />
+      </form>
+      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/51993242555?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20IntiCusco%20y%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener">WhatsApp</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== MENÚ MÓVIL ===================== -->
+<div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil">
+  <div class="mobile-nav-header">
+    <span class="brand"><img src="assets/logo.jpg" alt="IntiCusco" /></span>
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Cerrar menú">&times;</button>
+  </div>
+  <div class="mobile-nav-body">
+    <form class="mobile-search" action="servicios.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Buscar gorras..." aria-label="Buscar gorras" />
+      <button type="submit" class="btn btn-primary btn-sm">Buscar</button>
+    </form>
+    <a class="top-link" href="index.html">Inicio</a>
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-controls="acc-gorras" aria-expanded="false">Gorras <span class="chevron"></span></button>
+      <div class="accordion-panel" id="acc-gorras">
+        <p class="accordion-subhead">Por tipo</p>
+        <a href="servicios.html?categoria=gorras">Todas las gorras</a>
+        <a href="servicios.html?tipo=gorras-urbanas-unisex">Urbanas</a>
+        <a href="servicios.html?tipo=camioneras-o-trucker">Camioneras o trucker</a>
+        <a href="servicios.html?tipo=gorras-vintage-o-prelavadas">Vintage y prelavadas</a>
+        <a href="servicios.html?tipo=gorras-prelavadas-clasicas">Prelavadas clásicas</a>
+        <a href="servicios.html?tipo=gorras-estilo-polo-en-tela-drill">Polo y Kepy Polo</a>
+        <a href="servicios.html?categoria=viseras">Viseras</a>
+        <p class="accordion-subhead">Por estilo</p>
+        <a href="servicios.html?estilo=columbia">Columbia</a>
+        <a href="servicios.html?estilo=big-spin">Big Spin</a>
+        <a href="servicios.html?estilo=big-you">Big You</a>
+        <a href="servicios.html?estilo=calvin-klein">Calvin Klein</a>
+        <a href="servicios.html?estilo=lacoste">Lacoste</a>
+        <a href="servicios.html?estilo=hoja-latina">Hoja Latina</a>
+        <a href="servicios.html?estilo=gucci">Gucci</a>
+        <a href="servicios.html?estilo=guess">Guess</a>
+        <a href="servicios.html?estilo=versace">Versace</a>
+        <a href="servicios.html?estilo=michael">Michael</a>
+        <a href="servicios.html?estilo=hugo">Hugo</a>
+        <p class="accordion-subhead">Temáticas</p>
+        <a href="servicios.html?tipo=gorras-de-equipos-de-futbol">Equipos de fútbol</a>
+        <a href="servicios.html?tipo=gorras-con-escudo-del-peru">Escudo del Perú</a>
+        <a href="servicios.html?publico=mujeres">Gorras para mujer</a>
+        <a href="servicios.html?publico=ninos">Gorras infantiles</a>
+      </div>
+    </div>
+    <a class="top-link" href="servicios.html?coleccion=tendencias">Tendencias</a>
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-controls="acc-colecciones" aria-expanded="false">Colecciones <span class="chevron"></span></button>
+      <div class="accordion-panel" id="acc-colecciones">
+        <a href="servicios.html?publico=ninos">Para niños</a>
+        <a href="servicios.html?publico=mujeres">Selección para mujeres</a>
+        <a href="servicios.html?publico=adultos">Para adultos</a>
+        <a href="servicios.html?publico=unisex">Unisex</a>
+        <a href="servicios.html?coleccion=mas-vendidos">Más vendidos</a>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-controls="acc-sombreros" aria-expanded="false">Sombreros y más <span class="chevron"></span></button>
+      <div class="accordion-panel" id="acc-sombreros">
+        <a href="servicios.html?categoria=sombreros">Todos los sombreros</a>
+        <a href="servicios.html?tipo=sombreros-impermeables-modelo-coreano">Sombreros coreanos</a>
+        <a href="servicios.html?tipo=sombreros-en-pano">Sombreros en paño</a>
+        <a href="servicios.html?tipo=sombreros-bordados-en-pano">Sombreros bordados</a>
+        <a href="servicios.html?tipo=sombreros-modelo-coreano-con-encaje">Sombreros con encaje</a>
+        <a href="servicios.html?tipo=sombreros-modelo-coreano-doble-cara">Sombreros doble cara</a>
+        <a href="servicios.html?categoria=boinas">Boinas</a>
+        <a href="servicios.html?categoria=chullos">Chullos</a>
+        <a href="servicios.html?categoria=balaclavas-o-pasamontanas">Pasamontañas</a>
+        <a href="servicios.html?categoria=bandanas">Bandanas</a>
+      </div>
+    </div>
+    <a class="top-link" href="servicios.html?precio=0-30">Ofertas</a>
+    <a class="top-link" href="nosotros.html">Nosotros</a>
+    <a class="top-link" href="contacto.html">Visítanos</a>
+  </div>
+  <div class="mobile-nav-footer">
+    <a class="btn btn-whatsapp btn-block" href="https://wa.me/51993242555?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20IntiCusco%20y%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <section class="catalog-hero">
+    <div class="container">
+      <span class="eyebrow">Catálogo IntiCusco</span>
+      <h1>Gorras, sombreros y accesorios para toda la familia</h1>
+      <p style="color:rgba(255,255,255,0.82); max-width:560px; margin:10px auto 0;">Filtra por tipo, estilo, público, color o precio — o escríbenos directo por WhatsApp por cualquier modelo.</p>
+    </div>
+  </section>
+
+  <section class="browse-section">
+    <div class="container">
+      <div class="catalog-toolbar">
+        <div class="search-box">
+          <input type="search" id="searchInput" placeholder="Buscar por nombre, estilo o color..." aria-label="Buscar productos" />
+        </div>
+        <button type="button" class="btn btn-outline btn-sm filters-toggle-btn" id="filtersToggleBtn" aria-expanded="false" aria-controls="filtersPanel">Filtros</button>
+        <span class="results-count" id="resultsCount"></span>
+      </div>
+
+      <div class="filters-panel" id="filtersPanel">
+        <div class="filter-group">
+          <label for="filterCategoria">Tipo de producto</label>
+          <select id="filterCategoria">
+            <option value="">Todos</option>
+            <option value="gorras">Gorras</option>
+            <option value="viseras">Viseras</option>
+            <option value="sombreros">Sombreros</option>
+            <option value="boinas">Boinas</option>
+            <option value="chullos">Chullos</option>
+            <option value="balaclavas-o-pasamontanas">Balaclavas</option>
+            <option value="bandanas">Bandanas</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterPublico">Público</label>
+          <select id="filterPublico">
+            <option value="">Todos</option>
+            <option value="ninos">Niños</option>
+            <option value="mujeres">Mujeres</option>
+            <option value="adultos">Adultos</option>
+            <option value="jovenes">Jóvenes</option>
+            <option value="unisex">Unisex</option>
+            <option value="familias">Familias</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterEstilo">Estilo</label>
+          <select id="filterEstilo"><option value="">Todos</option></select>
+        </div>
+        <div class="filter-group">
+          <label for="filterColor">Color</label>
+          <select id="filterColor"><option value="">Todos</option></select>
+        </div>
+        <div class="filter-group">
+          <label for="filterPrecio">Precio web</label>
+          <select id="filterPrecio">
+            <option value="">Todos</option>
+            <option value="0-30">Hasta S/30</option>
+            <option value="31-40">S/31 a S/40</option>
+            <option value="41-50">S/41 a S/50</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterColeccion">Colección</label>
+          <select id="filterColeccion">
+            <option value="">Todas</option>
+            <option value="tendencias">Tendencias</option>
+            <option value="mas-vendidos">Más vendidos</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="active-filters" id="activeFilters"></div>
+    </div>
+  </section>
+
+  <!-- Vista de exploración (sin filtros activos) -->
+  <div id="browseView">
+    <section class="browse-section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Accesos rápidos</span><h2 class="section-title">Explora por categoría</h2></div>
+        </div>
+        <div class="quick-links">
+          <a href="servicios.html?categoria=gorras">Gorras</a>
+          <a href="servicios.html?tipo=camioneras-o-trucker">Camioneras</a>
+          <a href="servicios.html?tipo=gorras-urbanas-unisex">Urbanas</a>
+          <a href="servicios.html?tipo=gorras-vintage-o-prelavadas">Vintage</a>
+          <a href="servicios.html?categoria=sombreros">Sombreros</a>
+          <a href="servicios.html?categoria=boinas">Boinas</a>
+          <a href="servicios.html?categoria=chullos">Chullos</a>
+          <a href="servicios.html?categoria=balaclavas-o-pasamontanas">Pasamontañas</a>
+          <a href="servicios.html?categoria=bandanas">Bandanas</a>
+          <a href="servicios.html?coleccion=tendencias">Tendencias</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="browse-section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Tendencias</span><h2 class="section-title">Lo que está marcando estilo</h2></div>
+          <a class="section-link" href="servicios.html?coleccion=tendencias">Ver todas →</a>
+        </div>
+        <div class="product-grid" id="grid-tendencias"></div>
+      </div>
+    </section>
+
+    <section class="browse-section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Lo más pedido</span><h2 class="section-title">Gorras más buscadas</h2></div>
+        </div>
+        <div class="product-grid" id="grid-mas-buscadas"></div>
+      </div>
+    </section>
+
+    <section class="browse-section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Para los más pequeños</span><h2 class="section-title">Para niños</h2></div>
+          <a class="section-link" href="servicios.html?publico=ninos">Ver todo →</a>
+        </div>
+        <div class="product-grid" id="grid-ninos"></div>
+      </div>
+    </section>
+
+    <section class="browse-section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Selección</span><h2 class="section-title">Para mujeres</h2></div>
+          <a class="section-link" href="servicios.html?publico=mujeres">Ver todo →</a>
+        </div>
+        <div class="product-grid" id="grid-mujeres"></div>
+      </div>
+    </section>
+
+    <section class="browse-section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Abrigo y accesorios</span><h2 class="section-title">Sombreros, boinas y chullos</h2></div>
+          <a class="section-link" href="servicios.html?categoria=sombreros">Ver todo →</a>
+        </div>
+        <div class="product-grid" id="grid-sombreros"></div>
+      </div>
+    </section>
+
+    <section class="browse-section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Descuento exclusivo</span><h2 class="section-title">Ofertas web</h2></div>
+          <a class="section-link" href="servicios.html?precio=0-30">Ver todo →</a>
+        </div>
+        <div class="product-grid" id="grid-ofertas"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Vista de resultados filtrados -->
+  <div id="filteredView" style="display:none;">
+    <section class="browse-section">
+      <div class="container">
+        <div class="product-grid" id="grid-filtered"></div>
+        <div class="load-more-wrap">
+          <button type="button" class="btn btn-primary" id="loadMoreBtn">Cargar más</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>¿No encuentras tu modelo?</h2>
+          <p>Escríbenos por WhatsApp, contamos con más variedad en tienda.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn" style="background:var(--color-white);color:var(--color-primary-dark);" href="https://wa.me/51993242555?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20IntiCusco%20y%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== FOOTER (compartido) ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="assets/logo.jpg" alt="IntiCusco" /></a>
+        <p>Gorras, sombreros, boinas, chullos y accesorios para toda la familia. Calle Belén 452, Cusco, Perú.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/51993242555" target="_blank" rel="noopener">WhatsApp: +51 993 242 555</a>
+        <a href="mailto:luzmarina4411@gmail.com">luzmarina4411@gmail.com</a>
+        <p>Calle Belén 452, Cusco, Perú</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Catálogo</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-col">
+        <h4>Horario</h4>
+        <p>Lunes a domingo<br />9:00 a. m. – 9:00 p. m.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/gorrascusco1/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook de IntiCusco">FB</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>IntiCusco © 2026. Todos los derechos reservados. Los modelos son diseños inspirados en distintos estilos, disponibles en diferentes variantes.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/51993242555?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20IntiCusco%20y%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">💬</a>
+
+<script src="assets/js/catalogo.config.js"></script>
+<script src="assets/js/productos.generated.js"></script>
+<script src="assets/js/catalogo.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+(function () {
+  var Cat = window.IntiCatalog;
+  var ALL = Cat.products;
+  var slugify = Cat.slugify;
+
+  var browseView = document.getElementById("browseView");
+  var filteredView = document.getElementById("filteredView");
+  var grid = document.getElementById("grid-filtered");
+  var resultsCount = document.getElementById("resultsCount");
+  var activeFiltersEl = document.getElementById("activeFilters");
+  var loadMoreBtn = document.getElementById("loadMoreBtn");
+  var searchInput = document.getElementById("searchInput");
+
+  var selects = {
+    categoria: document.getElementById("filterCategoria"),
+    publico: document.getElementById("filterPublico"),
+    estilo: document.getElementById("filterEstilo"),
+    color: document.getElementById("filterColor"),
+    precio: document.getElementById("filterPrecio"),
+    coleccion: document.getElementById("filterColeccion")
+  };
+
+  var FILTER_KEYS = ["categoria", "tipo", "publico", "estilo", "color", "precio", "coleccion", "q"];
+  var visibleCount = window.CATALOG_CONFIG.pageSizeInitial;
+
+  // Poblar Estilo y Color dinámicamente desde los productos reales
+  (function populateDynamicFilters() {
+    var estilos = Array.from(new Set(ALL.map(function (p) { return p.style; }).filter(Boolean))).sort();
+    estilos.forEach(function (s) {
+      var opt = document.createElement("option");
+      opt.value = slugify(s); opt.textContent = s;
+      selects.estilo.appendChild(opt);
+    });
+    var colores = Array.from(new Set(ALL.map(function (p) { return p.color; }).filter(Boolean))).sort();
+    colores.forEach(function (c) {
+      var opt = document.createElement("option");
+      opt.value = slugify(c); opt.textContent = c.charAt(0).toUpperCase() + c.slice(1);
+      selects.color.appendChild(opt);
+    });
+  })();
+
+  function currentFilters() {
+    var params = Cat.getParams();
+    var f = {};
+    FILTER_KEYS.forEach(function (k) { if (params.get(k)) f[k] = params.get(k); });
+    return f;
+  }
+
+  function hasActiveFilters(f) { return Object.keys(f).length > 0; }
+
+  function syncControlsFromFilters(f) {
+    selects.categoria.value = f.categoria || "";
+    selects.publico.value = f.publico || "";
+    selects.estilo.value = f.estilo || "";
+    selects.color.value = f.color || "";
+    selects.precio.value = f.precio || "";
+    selects.coleccion.value = f.coleccion || "";
+    searchInput.value = f.q || "";
+  }
+
+  function updateUrl(f) {
+    var params = new URLSearchParams();
+    Object.keys(f).forEach(function (k) { if (f[k]) params.set(k, f[k]); });
+    var qs = params.toString();
+    var newUrl = window.location.pathname + (qs ? "?" + qs : "");
+    history.pushState(null, "", newUrl);
+  }
+
+  var FILTER_LABELS = {
+    categoria: "Tipo", tipo: "Tipo", publico: "Público", estilo: "Estilo",
+    color: "Color", precio: "Precio", coleccion: "Colección", q: "Búsqueda"
+  };
+
+  function renderChips(f) {
+    var chips = Object.keys(f).map(function (k) {
+      var control = selects[k];
+      var label = control ? (control.options[control.selectedIndex] ? control.options[control.selectedIndex].textContent : f[k]) : f[k];
+      if (k === "q") label = '"' + f[k] + '"';
+      return '<span class="filter-chip">' + (FILTER_LABELS[k] || k) + ": " + label + '<button type="button" data-remove="' + k + '" aria-label="Quitar filtro">&times;</button></span>';
+    });
+    if (chips.length) {
+      chips.push('<button type="button" class="clear-filters" id="clearFiltersBtn">Limpiar filtros</button>');
+    }
+    activeFiltersEl.innerHTML = chips.join("");
+
+    activeFiltersEl.querySelectorAll("[data-remove]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var f2 = currentFilters();
+        delete f2[btn.getAttribute("data-remove")];
+        applyFilters(f2, true);
+      });
+    });
+    var clearBtn = document.getElementById("clearFiltersBtn");
+    if (clearBtn) clearBtn.addEventListener("click", function () { applyFilters({}, true); });
+  }
+
+  function applyFilters(f, updateHistory) {
+    visibleCount = window.CATALOG_CONFIG.pageSizeInitial;
+    syncControlsFromFilters(f);
+    renderChips(f);
+    if (updateHistory) updateUrl(f);
+
+    if (!hasActiveFilters(f)) {
+      browseView.style.display = "";
+      filteredView.style.display = "none";
+      resultsCount.textContent = "";
+      return;
+    }
+
+    browseView.style.display = "none";
+    filteredView.style.display = "";
+
+    var matches = ALL.filter(function (p) { return Cat.matchesFilters(p, f); });
+    resultsCount.textContent = matches.length + (matches.length === 1 ? " producto encontrado" : " productos encontrados");
+
+    var visible = matches.slice(0, visibleCount);
+    Cat.renderGrid(grid, visible);
+    loadMoreBtn.style.display = matches.length > visibleCount ? "inline-flex" : "none";
+
+    loadMoreBtn.onclick = function () {
+      visibleCount += window.CATALOG_CONFIG.pageSizeLoadMore;
+      var next = matches.slice(0, visibleCount);
+      Cat.renderGrid(grid, next);
+      loadMoreBtn.style.display = matches.length > visibleCount ? "inline-flex" : "none";
+    };
+  }
+
+  // Listeners de filtros
+  Object.keys(selects).forEach(function (key) {
+    selects[key].addEventListener("change", function () {
+      var f = currentFilters();
+      if (selects[key].value) f[key] = selects[key].value; else delete f[key];
+      applyFilters(f, true);
+    });
+  });
+
+  var searchTimer = null;
+  searchInput.addEventListener("input", function () {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(function () {
+      var f = currentFilters();
+      if (searchInput.value.trim()) f.q = searchInput.value.trim(); else delete f.q;
+      applyFilters(f, true);
+    }, 250);
+  });
+
+  document.getElementById("filtersToggleBtn").addEventListener("click", function () {
+    var panel = document.getElementById("filtersPanel");
+    var isOpen = panel.classList.toggle("open");
+    this.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  window.addEventListener("popstate", function () { applyFilters(currentFilters(), false); });
+
+  // Estado inicial desde la URL
+  applyFilters(currentFilters(), false);
+
+  // Filtros siempre visibles en escritorio
+  function syncPanelVisibility() {
+    var panel = document.getElementById("filtersPanel");
+    if (window.innerWidth > 900) panel.classList.add("open");
+  }
+  syncPanelVisibility();
+  window.addEventListener("resize", syncPanelVisibility);
+
+  // ---------------------------------------------------------------------
+  // Secciones de exploración (solo cuando no hay filtros activos)
+  // ---------------------------------------------------------------------
+  function fromFolder(folder, count) {
+    return ALL.filter(function (p) { return p.originalFile.indexOf("Gorras/" + folder + "/") === 0; }).slice(0, count);
+  }
+  function byCollection(name, count) {
+    return ALL.filter(function (p) { return p.collections.indexOf(name) !== -1; }).slice(0, count);
+  }
+  function byCategoryMix(cats, count) {
+    return ALL.filter(function (p) { return cats.indexOf(p.category) !== -1; }).slice(0, count);
+  }
+
+  var tendencias = ALL.filter(function (p) { return p.trending; })
+    .sort(function (a, b) { return b.trendPriority - a.trendPriority; })
+    .slice(0, window.CATALOG_CONFIG.maxTrendingCatalog);
+  Cat.renderGrid(document.getElementById("grid-tendencias"), tendencias);
+
+  var masBuscadas = []
+    .concat(fromFolder("Caminera", 2))
+    .concat(fromFolder("Urbanas", 2))
+    .concat(fromFolder("Vintage o Prelavadas", 2))
+    .concat(fromFolder("Gorras en POLO", 1))
+    .concat(fromFolder("Gorras niños en modelo y animes", 1));
+  Cat.renderGrid(document.getElementById("grid-mas-buscadas"), masBuscadas);
+
+  Cat.renderGrid(document.getElementById("grid-ninos"), byCollection("Niños", 4));
+  Cat.renderGrid(document.getElementById("grid-mujeres"), byCollection("Mujeres", 4));
+  Cat.renderGrid(document.getElementById("grid-sombreros"), byCategoryMix(["Sombreros", "Boinas", "Chullos"], 8));
+
+  var ofertas = ALL.slice().sort(function (a, b) { return b.discountPercentage - a.discountPercentage; }).slice(0, 8);
+  Cat.renderGrid(document.getElementById("grid-ofertas"), ofertas);
+})();
+</script>
+</body>
+</html>
