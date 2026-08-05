@@ -15,3 +15,6 @@ Thumbs.db
 
 # Registros internos de renombrado
 **/_rename-log.txt
+
+# Catálogo en PDF para clientes (pesa ~90 MB, no es necesario para la web)
+catalogo-pdf/

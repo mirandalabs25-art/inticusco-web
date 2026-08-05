@@ -4,6 +4,7 @@
   "private": true,
   "description": "Sitio web de IntiCusco (HTML/CSS/JS) — catálogo generado a partir de la carpeta Gorras/.",
   "scripts": {
-    "generar-productos": "node scripts/generar-productos.js"
+    "generar-productos": "node scripts/generar-productos.js",
+    "generar-catalogo-pdf": "node scripts/generar-catalogo-pdf.js && node scripts/imprimir-catalogo-pdf.js"
   }
 }
