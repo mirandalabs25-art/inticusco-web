@@ -167,7 +167,7 @@ function main() {
     text-align: center;
     page-break-after: always;
   }
-  .cover img.logo { width: 220px; margin-bottom: 26px; }
+  .cover img.logo { width: 170px; height: 170px; border-radius: 50%; object-fit: cover; margin-bottom: 24px; }
   .cover h1 { font-size: 30px; color: #3E281D; margin: 0 0 10px; }
   .cover p.tag { font-size: 15px; color: #76665C; margin: 0 0 30px; }
   .cover .info { font-size: 13px; color: #34241B; line-height: 1.9; border-top: 1px solid #E4D9CC; padding-top: 20px; margin-top: 10px; }
@@ -215,6 +215,7 @@ function main() {
 <body>
 
   <div class="cover">
+    <img class="logo" src="../assets/logo-famystore.jpg" alt="Famy Store" />
     <h1>Catálogo Famy Store</h1>
     <p class="tag">Gorras, sombreros, boinas, chullos y accesorios para toda la familia</p>
     <div class="info">
@@ -234,6 +235,38 @@ function main() {
 
   ${body}
 
+<script>
+// Comprime las fotos ANTES de imprimir: el PDF embebe lo que haya en el DOM,
+// y los originales (208 MB en total) dan un PDF inmanejable para WhatsApp.
+// Requiere que Chrome corra con --allow-file-access-from-files (lo pone
+// scripts/imprimir-catalogo-pdf.js); si el canvas queda bloqueado, se deja la
+// imagen original y el PDF sale igual, solo que pesado.
+(async function () {
+  var ANCHO_MAX = 560, CALIDAD = 0.72;
+  var fotos = Array.prototype.slice.call(document.images).filter(function (i) {
+    return !i.classList.contains("logo");
+  });
+  var comprimidas = 0, fallidas = 0;
+  for (var i = 0; i < fotos.length; i++) {
+    var img = fotos[i];
+    try {
+      if (!img.complete) {
+        await new Promise(function (res) { img.onload = res; img.onerror = res; });
+      }
+      var w = img.naturalWidth || ANCHO_MAX, h = img.naturalHeight || ANCHO_MAX;
+      var escala = Math.min(1, ANCHO_MAX / w);
+      var c = document.createElement("canvas");
+      c.width = Math.max(1, Math.round(w * escala));
+      c.height = Math.max(1, Math.round(h * escala));
+      c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+      img.src = c.toDataURL("image/jpeg", CALIDAD);
+      comprimidas++;
+    } catch (e) { fallidas++; }
+  }
+  window.__CATALOGO_FOTOS = { comprimidas: comprimidas, fallidas: fallidas, total: fotos.length };
+  window.__CATALOGO_LISTO = true;
+})();
+</script>
 </body>
 </html>`;
 

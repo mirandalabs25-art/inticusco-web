@@ -69,6 +69,7 @@ async function main() {
     "--headless=new",
     "--no-first-run",
     "--disable-gpu",
+    "--allow-file-access-from-files",
     `--remote-debugging-port=${PORT}`,
     `--user-data-dir=${PROFILE_DIR}`
   ], { stdio: "ignore" });
@@ -121,9 +122,27 @@ async function main() {
       ws.addEventListener("message", handler);
     });
 
-    // Margen extra para que las ~490 imágenes locales terminen de decodificarse.
-    console.log("Esperando a que las imágenes terminen de cargar...");
-    await sleep(8000);
+    // Esperar a que el HTML termine de comprimir las ~490 fotos (ver el <script>
+    // final de catalogo-impresion.html). Sin esto el PDF sale de ~94 MB.
+    console.log("Comprimiendo las fotos en el navegador (puede tardar unos minutos)...");
+    await send("Runtime.enable", {});
+    let infoFotos = null;
+    for (let i = 0; i < 240; i++) {
+      const r = await send("Runtime.evaluate", {
+        expression: "window.__CATALOGO_LISTO ? JSON.stringify(window.__CATALOGO_FOTOS) : ''",
+        returnByValue: true
+      });
+      const v = r.result && r.result.result && r.result.result.value;
+      if (v) { infoFotos = JSON.parse(v); break; }
+      await sleep(2000);
+    }
+    if (infoFotos) {
+      console.log("Fotos comprimidas: " + infoFotos.comprimidas + " de " + infoFotos.total +
+        (infoFotos.fallidas ? " (" + infoFotos.fallidas + " quedaron sin comprimir)" : ""));
+    } else {
+      console.log("Aviso: se agotó la espera de la compresión; el PDF puede salir pesado.");
+    }
+    await sleep(1500);
 
     console.log("Generando PDF con números de página (sin fecha/hora)...");
     const footerTemplate = `
@@ -163,7 +182,9 @@ async function main() {
     exitCode = 1;
   } finally {
     chromeProc.kill();
-    fs.rmSync(PROFILE_DIR, { recursive: true, force: true });
+    // Chrome puede tardar en soltar el perfil: si no se puede borrar, no importa,
+    // el PDF ya esta escrito y la proxima corrida lo limpia igual.
+    try { fs.rmSync(PROFILE_DIR, { recursive: true, force: true }); } catch (e) {}
   }
   process.exit(exitCode);
 }
