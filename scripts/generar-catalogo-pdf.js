@@ -20,7 +20,7 @@ const PRODUCTS_FILE = path.join(ROOT, "assets", "js", "productos.generated.js");
 
 function loadProducts() {
   const src = fs.readFileSync(PRODUCTS_FILE, "utf8").replace(
-    "window.INTICUSCO_PRODUCTS =",
+    "window.FAMYSTORE_PRODUCTS =",
     "module.exports ="
   );
   // eslint-disable-next-line no-eval

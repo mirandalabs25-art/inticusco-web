@@ -143,7 +143,7 @@
   }
 
   // Utilidad compartida: bloquear/desbloquear scroll del body (usada por el modal de producto)
-  window.INTICUSCO_lockScroll = function (locked) {
+  window.FAMYSTORE_lockScroll = function (locked) {
     document.body.classList.toggle("nav-open", locked);
   };
 })();

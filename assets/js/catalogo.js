@@ -1,11 +1,11 @@
 // Famy Store — motor del catálogo: tarjetas, filtros, buscador flexible,
 // paginación, modal de producto y enlaces de WhatsApp individuales por producto.
-// Depende de: assets/js/productos.generated.js (window.INTICUSCO_PRODUCTS)
+// Depende de: assets/js/productos.generated.js (window.FAMYSTORE_PRODUCTS)
 //             assets/js/catalogo.config.js (window.CATALOG_CONFIG, window.ALIAS_GROUPS)
 "use strict";
 
 (function () {
-  const PRODUCTS = Array.isArray(window.INTICUSCO_PRODUCTS) ? window.INTICUSCO_PRODUCTS : [];
+  const PRODUCTS = Array.isArray(window.FAMYSTORE_PRODUCTS) ? window.FAMYSTORE_PRODUCTS : [];
   const CONFIG = window.CATALOG_CONFIG || { whatsappNumber: "51993242555", siteUrl: window.location.origin + "/" };
 
   // -----------------------------------------------------------------------
@@ -52,11 +52,11 @@ Enlace: ${productUrl}
     return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(createWhatsAppMessage(product))}`;
   }
 
-  window.IntiCatalog = window.IntiCatalog || {};
-  window.IntiCatalog.createProductUrl = createProductUrl;
-  window.IntiCatalog.createWhatsAppMessage = createWhatsAppMessage;
-  window.IntiCatalog.createWhatsAppLink = createWhatsAppLink;
-  window.IntiCatalog.products = PRODUCTS;
+  window.FamyCatalog = window.FamyCatalog || {};
+  window.FamyCatalog.createProductUrl = createProductUrl;
+  window.FamyCatalog.createWhatsAppMessage = createWhatsAppMessage;
+  window.FamyCatalog.createWhatsAppLink = createWhatsAppLink;
+  window.FamyCatalog.products = PRODUCTS;
 
   // -----------------------------------------------------------------------
   // Helpers de texto
@@ -78,7 +78,7 @@ Enlace: ${productUrl}
       .replace(/\s+/g, " ")
       .trim();
   }
-  window.IntiCatalog.normalizeSearchText = normalizeSearchText;
+  window.FamyCatalog.normalizeSearchText = normalizeSearchText;
 
   function escapeHtml(value) {
     return String(value)
@@ -114,7 +114,7 @@ Enlace: ${productUrl}
     if (b.priority !== a.priority) return b.priority - a.priority;
     return a.title.localeCompare(b.title, "es");
   }
-  window.IntiCatalog.byPriority = byPriority;
+  window.FamyCatalog.byPriority = byPriority;
 
   // -----------------------------------------------------------------------
   // Buscador flexible (alias, coincidencia parcial, difusa, ranking)
@@ -175,7 +175,7 @@ Enlace: ${productUrl}
     });
     return scored.map((s) => s.product);
   }
-  window.IntiCatalog.searchProducts = searchProducts;
+  window.FamyCatalog.searchProducts = searchProducts;
 
   // -----------------------------------------------------------------------
   // Tarjeta de producto
@@ -247,7 +247,7 @@ Enlace: ${productUrl}
       container.dataset.modalBound = "1";
     }
   }
-  window.IntiCatalog.renderGrid = renderGrid;
+  window.FamyCatalog.renderGrid = renderGrid;
 
   // -----------------------------------------------------------------------
   // Modal / ficha de producto
@@ -331,7 +331,7 @@ Enlace: ${productUrl}
     backdrop.querySelector("#modalMeta").innerHTML = meta.join("");
 
     backdrop.classList.add("open");
-    window.INTICUSCO_lockScroll && window.INTICUSCO_lockScroll(true);
+    window.FAMYSTORE_lockScroll && window.FAMYSTORE_lockScroll(true);
     backdrop.querySelector("#modalCloseBtn").focus();
 
     if (history.replaceState) history.replaceState(null, "", "#" + product.slug);
@@ -341,12 +341,12 @@ Enlace: ${productUrl}
     const backdrop = document.getElementById("productModalBackdrop");
     if (!backdrop) return;
     backdrop.classList.remove("open");
-    window.INTICUSCO_lockScroll && window.INTICUSCO_lockScroll(false);
+    window.FAMYSTORE_lockScroll && window.FAMYSTORE_lockScroll(false);
     if (modalLastFocused) modalLastFocused.focus();
   }
 
-  window.IntiCatalog.openModal = openModal;
-  window.IntiCatalog.closeModal = closeModal;
+  window.FamyCatalog.openModal = openModal;
+  window.FamyCatalog.closeModal = closeModal;
 
   function openFromHash() {
     const slug = window.location.hash.replace("#", "");
@@ -354,7 +354,7 @@ Enlace: ${productUrl}
     const product = PRODUCTS.find((p) => p.slug === slug);
     if (product) openModal(product, null);
   }
-  window.IntiCatalog.openFromHash = openFromHash;
+  window.FamyCatalog.openFromHash = openFromHash;
 
   // -----------------------------------------------------------------------
   // Filtros (usados por servicios.html)
@@ -398,9 +398,9 @@ Enlace: ${productUrl}
     return true;
   }
 
-  window.IntiCatalog.matchesFilters = matchesFilters;
-  window.IntiCatalog.slugify = slugify;
-  window.IntiCatalog.getParams = getParams;
+  window.FamyCatalog.matchesFilters = matchesFilters;
+  window.FamyCatalog.slugify = slugify;
+  window.FamyCatalog.getParams = getParams;
 
   document.addEventListener("DOMContentLoaded", () => {
     if (window.location.hash) openFromHash();

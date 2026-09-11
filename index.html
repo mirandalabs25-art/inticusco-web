@@ -624,8 +624,8 @@
 <script src="assets/js/site.js"></script>
 <script>
   (function () {
-    var ALL = window.IntiCatalog.products;
-    var renderGrid = window.IntiCatalog.renderGrid;
+    var ALL = window.FamyCatalog.products;
+    var renderGrid = window.FamyCatalog.renderGrid;
 
     function fromFolder(folder, count) {
       return ALL.filter(function (p) { return p.folder === folder; }).slice(0, count);
@@ -649,13 +649,13 @@
     renderGrid(document.getElementById("grid-boinasmujer"), fromFolder("Boinas de Mujer", 8));
 
     var nuevos = ALL.filter(function (p) { return p.newArrival; })
-      .sort(window.IntiCatalog.byPriority)
+      .sort(window.FamyCatalog.byPriority)
       .slice(0, window.CATALOG_CONFIG.pageSizeIndex);
     renderGrid(document.getElementById("grid-nuevos"), nuevos);
 
     // Tendencias: máximo 8, ordenadas por prioridad
     var tendencias = ALL.filter(function (p) { return p.trending; })
-      .sort(window.IntiCatalog.byPriority)
+      .sort(window.FamyCatalog.byPriority)
       .slice(0, window.CATALOG_CONFIG.maxTrendingIndex);
     renderGrid(document.getElementById("grid-tendencias"), tendencias);
 
@@ -673,7 +673,7 @@
 
     // Promo 2 × S/90: solo aplica a las gorras de S/50
     var ofertas = ALL.filter(function (p) { return p.category === "Gorras" && p.salePrice === 50; })
-      .sort(window.IntiCatalog.byPriority).slice(0, 8);
+      .sort(window.FamyCatalog.byPriority).slice(0, 8);
     renderGrid(document.getElementById("grid-ofertas"), ofertas);
   })();
 </script>

@@ -808,7 +808,7 @@ function main() {
 // Generado: ${new Date().toISOString()}
 `;
 
-  const body = `window.INTICUSCO_PRODUCTS = ${JSON.stringify(products, null, 2)};\n`;
+  const body = `window.FAMYSTORE_PRODUCTS = ${JSON.stringify(products, null, 2)};\n`;
 
   fs.writeFileSync(OUTPUT_FILE, header + body, "utf8");
 

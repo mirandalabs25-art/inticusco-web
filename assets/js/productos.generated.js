@@ -2,7 +2,7 @@
 // No editar a mano — los cambios se perderán al volver a ejecutar:
 //   npm run generar-productos
 // Generado: 2026-09-11T21:58:23.369Z
-window.INTICUSCO_PRODUCTS = [
+window.FAMYSTORE_PRODUCTS = [
   {
     "id": "bandana-camuflaje-azul-celeste",
     "slug": "bandana-camuflaje-azul-celeste",
