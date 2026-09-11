@@ -1,11 +1,11 @@
-// Configuración del catálogo IntiCusco — compartida por index.html y servicios.html.
+// Configuración del catálogo Famy Store — compartida por index.html y servicios.html.
 // Los precios y categorías reales viven en scripts/generar-productos.js (fuente de
 // verdad para el generador). Este archivo solo configura el COMPORTAMIENTO del
 // catálogo en el navegador: WhatsApp, paginación y grupos de alias del buscador.
 "use strict";
 
 const WHATSAPP_NUMBER = "51993242555";
-const SITE_URL = "https://inticusco.lat/";
+const SITE_URL = "https://famystore.online/";
 
 // Debe reflejar ALIAS_GROUPS de scripts/generar-productos.js — si editas uno,
 // edita el otro. Se usa aquí solo como referencia de vocabulario del buscador;

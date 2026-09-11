@@ -1,4 +1,4 @@
-// IntiCusco — comportamiento compartido del sitio: menú de escritorio (mega menú),
+// Famy Store — comportamiento compartido del sitio: menú de escritorio (mega menú),
 // menú móvil en acordeón, y utilidades comunes. Se carga en las 4 páginas.
 "use strict";
 
@@ -138,7 +138,7 @@
   function initWhatsAppFab() {
     const fab = document.querySelector(".whatsapp-fab");
     if (!fab || !window.CATALOG_CONFIG) return;
-    const message = "Hola, vi la página de IntiCusco y quisiera recibir más información.";
+    const message = "Hola, vi la página de Famy Store y quisiera recibir más información.";
     fab.href = `https://wa.me/${window.CATALOG_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
   }
 

@@ -2,7 +2,7 @@
 "use strict";
 
 /**
- * Generador de catálogo IntiCusco — Versión 2.
+ * Generador de catálogo Famy Store — Versión 2.
  * Lee la carpeta Gorras/ (organizada manualmente por el negocio: cada subcarpeta
  * es una categoría/estilo, cada foto ya tiene un nombre descriptivo) y genera
  * assets/js/productos.generated.js con un array de productos listo para el sitio.
@@ -532,23 +532,16 @@ function buildDescription(product, productoWord, config) {
 // 4. Precios
 // ---------------------------------------------------------------------------
 
-function calculateDiscountPercentage(regularPrice, salePrice) {
-  if (!Number.isFinite(regularPrice) || !Number.isFinite(salePrice) || regularPrice <= salePrice) {
-    return 0;
-  }
-  return Math.round(((regularPrice - salePrice) / regularPrice) * 100);
-}
-
 function createPriceData(finalPrice) {
   const salePrice = Number(finalPrice);
-  const regularPrice = salePrice + 10;
-  const savings = regularPrice - salePrice;
+  // Sin "precio regular" de referencia: el precio publicado es el precio real
+  // (un precio tachado inventado es riesgoso ante INDECOPI).
   return {
     salePrice,
-    regularPrice,
-    savings,
-    discountPercentage: calculateDiscountPercentage(regularPrice, salePrice),
-    promotionActive: true,
+    regularPrice: null,
+    savings: 0,
+    discountPercentage: 0,
+    promotionActive: false,
     pricePending: false
   };
 }
@@ -840,7 +833,7 @@ function main() {
   // Reporte por consola
   // ---------------------------------------------------------------------
   console.log("");
-  console.log("=== Generación de catálogo IntiCusco (V2) ===");
+  console.log("=== Generación de catálogo Famy Store (V2) ===");
   console.log(`Carpetas encontradas: ${folderNames.length}`);
   console.log(`Productos generados: ${products.length}`);
   console.log(`Productos en Tendencias: ${trendingCount}`);

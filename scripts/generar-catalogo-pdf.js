@@ -2,7 +2,7 @@
 "use strict";
 
 /**
- * Genera un HTML de impresión con TODAS las fotos del catálogo IntiCusco,
+ * Genera un HTML de impresión con TODAS las fotos del catálogo Famy Store,
  * organizado por secciones (una por carpeta real), listo para convertir a PDF.
  * No muestra fecha/hora de generación — solo contenido y número de páginas
  * (el número de página lo agrega scripts/imprimir-catalogo-pdf.js al imprimir).
@@ -113,7 +113,7 @@ function buildSections(products) {
 function cardHtml(p) {
   const priceHtml = p.pricePending
     ? `<span class="pending">Consultar precio</span>`
-    : `<span class="reg">S/${p.regularPrice}</span> <span class="final">S/${p.salePrice}</span>`;
+    : `<span class="final">S/${p.salePrice}</span>`;
   return `
   <div class="card">
     <div class="card-img"><img src="../${p.image}" alt="${escapeHtml(p.title)}" /></div>
@@ -149,7 +149,7 @@ function main() {
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<title>Catálogo IntiCusco</title>
+<title>Catálogo Famy Store</title>
 <style>
   @page { size: A4; margin: 14mm 12mm; }
   * { box-sizing: border-box; }
@@ -215,8 +215,7 @@ function main() {
 <body>
 
   <div class="cover">
-    <img class="logo" src="../assets/logo.jpg" alt="IntiCusco" />
-    <h1>Catálogo IntiCusco</h1>
+    <h1>Catálogo Famy Store</h1>
     <p class="tag">Gorras, sombreros, boinas, chullos y accesorios para toda la familia</p>
     <div class="info">
       <p><strong>Dirección:</strong> Calle Belén 452, Cusco, Perú</p>

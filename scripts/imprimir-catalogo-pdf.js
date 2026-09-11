@@ -18,7 +18,7 @@ const { spawn } = require("child_process");
 
 const ROOT = path.resolve(__dirname, "..");
 const HTML_PATH = path.join(ROOT, "catalogo-pdf", "catalogo-impresion.html");
-const OUT_PATH = path.join(ROOT, "catalogo-pdf", "Catalogo-IntiCusco.pdf");
+const OUT_PATH = path.join(ROOT, "catalogo-pdf", "Catalogo-FamyStore.pdf");
 const PROFILE_DIR = "C:\\ic-pdf-profile";
 const PORT = 9222;
 

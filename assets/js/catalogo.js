@@ -1,4 +1,4 @@
-// IntiCusco — motor del catálogo: tarjetas, filtros, buscador flexible,
+// Famy Store — motor del catálogo: tarjetas, filtros, buscador flexible,
 // paginación, modal de producto y enlaces de WhatsApp individuales por producto.
 // Depende de: assets/js/productos.generated.js (window.INTICUSCO_PRODUCTS)
 //             assets/js/catalogo.config.js (window.CATALOG_CONFIG, window.ALIAS_GROUPS)
@@ -22,7 +22,7 @@
     const tipoEstilo = product.style || product.type || "Consulta el modelo";
 
     if (product.pricePending) {
-      return `Hola, vi este modelo en la página de IntiCusco:
+      return `Hola, vi este modelo en la página de Famy Store:
 
 Producto: ${product.title}
 Categoría: ${product.category}
@@ -35,16 +35,13 @@ Enlace: ${productUrl}
 ¿Está disponible y cuál es su precio?`;
     }
 
-    return `Hola, vi este modelo en la página de IntiCusco:
+    return `Hola, vi este modelo en la página de Famy Store:
 
 Producto: ${product.title}
 Categoría: ${product.category}
 Tipo o estilo: ${tipoEstilo}
 Color: ${product.color || "Consulta los colores disponibles"}
-Precio regular: S/${product.regularPrice}
-Descuento web: ${product.discountPercentage}%
-Ahorras: S/${product.savings}
-Precio web: S/${product.salePrice}
+Precio: S/${product.salePrice}
 Descripción: ${product.description}
 Enlace: ${productUrl}
 
@@ -190,16 +187,13 @@ Enlace: ${productUrl}
     }
     return `
         <div class="price-row">
-          <span class="price-regular">S/${product.regularPrice}</span>
           <span class="price-final">S/${product.salePrice}</span>
-        </div>
-        <p class="price-save">Ahorras S/${product.savings}</p>`;
+        </div>`;
   }
 
   function productCardHtml(product) {
     const badges = [];
     if (product.pricePending) badges.push(`<span class="badge badge-pending">Consultar precio</span>`);
-    else if (product.discountPercentage > 0) badges.push(`<span class="badge badge-discount">${product.discountPercentage}% DSCTO</span>`);
     if (product.newArrival) badges.push(`<span class="badge badge-new">Nuevo</span>`);
     if (product.trending) badges.push(`<span class="badge badge-trend">Tendencia</span>`);
     if (product.bestSeller) badges.push(`<span class="badge badge-best">Más vendido</span>`);
@@ -317,15 +311,12 @@ Enlace: ${productUrl}
     } else {
       backdrop.querySelector("#modalPriceBlock").innerHTML = `
         <div class="price-row">
-          <span class="price-regular">S/${product.regularPrice}</span>
           <span class="price-final">S/${product.salePrice}</span>
-        </div>
-        <p class="price-save">Ahorras S/${product.savings} · ${product.discountPercentage}% de descuento</p>`;
+        </div>`;
     }
 
     const badges = [];
     if (product.pricePending) badges.push(`<span class="badge badge-pending">Consultar precio</span>`);
-    else if (product.discountPercentage > 0) badges.push(`<span class="badge badge-discount">${product.discountPercentage}% DSCTO</span>`);
     if (product.newArrival) badges.push(`<span class="badge badge-new">Nuevo</span>`);
     if (product.trending) badges.push(`<span class="badge badge-trend">Tendencia</span>`);
     if (product.bestSeller) badges.push(`<span class="badge badge-best">Más vendido</span>`);
